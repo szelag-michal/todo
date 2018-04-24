@@ -1,0 +1,8 @@
+<ul *ngIf="tasksList; else noTasks;">
+    <li appDate [date]="task.created" [date]="task.created" *ngFor="let task of tasksList | sortName; let i = index">
+      {{task.name | transformTask: '!'}} <small><a (click)="done(task)">done</a> | <a (click)="remove(task, i)">remove</a></small>
+    </li>
+  </ul>
+<ng-template #noTasks>
+  <p>brak zadań</p>
+</ng-template>

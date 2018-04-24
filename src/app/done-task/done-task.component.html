@@ -1,0 +1,8 @@
+<ul *ngIf="doneTasks.length > 0; else noTasks;">
+    <li appDate appChecked [date]="task.end" *ngFor="let task of doneTasks; let i = index">
+      {{task.name | transformTask: ' - super!'}}
+    </li>
+  </ul>
+  <ng-template #noTasks>
+    <p>brak zadań</p>
+  </ng-template>
