@@ -11,13 +11,15 @@ export class TodoTaskComponent {
   tasksList: Array<Task> = [];
 
   constructor(private tasksService: TaskService) {
-    this.tasksService.getTasksListObservable().subscribe((tasks: Array<Task>) => this.tasksList = tasks.filter(t => t.isDone === false));
+
+      this.tasksService.getTasksListObservable().subscribe((tasks: Array<Task>) => this.tasksList = tasks.filter(t => t.isDone === false));
+
   }
 
   remove(task: Task, i: number) {
-    this.tasksService.remove(task);
+    // this.tasksService.remove(task);
   }
   done(task: Task) {
-    this.tasksService.done(task);
+    // this.tasksService.done(task);
   }
 }
